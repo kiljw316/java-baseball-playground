@@ -1,13 +1,15 @@
 package study;
 
-import generators.GeneratorOfThreeNumber;
-import org.assertj.core.api.Assertions;
+import classes.ThreeRandomNumbers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProgramTest {
 
@@ -15,8 +17,13 @@ public class ProgramTest {
     @DisplayName("서로 다른 수로 이루어진 3자리의 수 만들기")
     void generateThreeNumberArray() throws Exception {
 
+        ThreeRandomNumbers threeRandomNumbers = new ThreeRandomNumbers();
+        List<Integer> opponentNumberList = threeRandomNumbers.list();
+//        System.out.println("opponentNumberList = " + opponentNumberList.toString());
 
-        List<Integer> opponentNumberList = GeneratorOfThreeNumber.generate();
+        threeRandomNumbers.generate();
+//        System.out.println("threeRandomNumbers.getNumberList() = " + threeRandomNumbers.getNumberList());
+
         HashSet<Integer> integerSet = new HashSet<>(opponentNumberList);
 
         assertThat(opponentNumberList.size()).isEqualTo(3);
