@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class UnitTest {
 
     @Test
-    void scanner() throws Exception {
+    void calc() throws Exception {
         String input = "2 + 3 * 4 / 2";
         InputStream inputStream = generateUserInput(input);
         Scanner scanner = new Scanner(inputStream);

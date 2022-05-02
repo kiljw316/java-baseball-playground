@@ -17,11 +17,12 @@ public class ProgramTest {
     @DisplayName("서로 다른 수로 이루어진 3자리의 수 만들기")
     void generateThreeNumberArray() throws Exception {
 
-        ThreeRandomNumbers threeRandomNumbers = new ThreeRandomNumbers();
+        ThreeRandomNumbers threeRandomNumbers = new ThreeRandomNumbers(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9});
+        threeRandomNumbers.generate();
         List<Integer> opponentNumberList = threeRandomNumbers.list();
 //        System.out.println("opponentNumberList = " + opponentNumberList.toString());
 
-        threeRandomNumbers.generate();
+
 //        System.out.println("threeRandomNumbers.getNumberList() = " + threeRandomNumbers.getNumberList());
 
         HashSet<Integer> integerSet = new HashSet<>(opponentNumberList);
