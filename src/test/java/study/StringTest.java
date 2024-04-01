@@ -37,7 +37,7 @@ public class StringTest {
         String[] result = value.split(",");
 
         //then
-        assertThat(result).contains("1");
+        assertThat(result).containsExactly("1");
         assertThat(result).hasSize(1);
     }
 
@@ -48,7 +48,7 @@ public class StringTest {
         String value = "(1,2)";
 
         //when
-        String result = value.substring(1, 4);
+        String result = value.substring(1, value.length() - 1);
 
         //then
         assertThat(result).isEqualTo("1,2");
