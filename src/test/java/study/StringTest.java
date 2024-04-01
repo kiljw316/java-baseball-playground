@@ -40,4 +40,16 @@ public class StringTest {
         assertThat(result).hasSize(1);
     }
 
+    @DisplayName("\"(1,2)\" 값이 주어졌을 때 String의 substring() 메소드를 활용해 ()을 제거하고 \"1,2\"를 반환하도록 구현한다.")
+    @Test
+    void substring_test() {
+        //given
+        String value = "(1,2)";
+
+        //when
+        String result = value.substring(1, 4);
+
+        //then
+        assertThat(result).isEqualTo("1,2");
+    }
 }
