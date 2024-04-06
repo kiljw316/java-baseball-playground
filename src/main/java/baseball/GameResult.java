@@ -47,4 +47,8 @@ public class GameResult {
 
         return sb.toString();
     }
+
+    public boolean isGameOver() {
+        return this.getResult() == Result.GAME_OVER;
+    }
 }
