@@ -24,4 +24,27 @@ public class GameResult {
 
         return Result.IN_PROGRESS;
     }
+
+    public String getResultMessage() {
+        if (strike == 0 && ball == 0) {
+            return "낫싱";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        if (ball != 0) {
+            sb.append(ball);
+            sb.append("볼");
+        }
+
+        if (sb.length() != 0 && strike != 0) {
+            sb.append(" ");
+        }
+
+        if (strike != 0) {
+            sb.append(strike);
+            sb.append("스트라이크");
+        }
+
+        return sb.toString();
+    }
 }
